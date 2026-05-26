@@ -1,0 +1,50 @@
+# ════════════════════════════════════════════════════════════
+# config.example.yaml — 用户配置模板
+# 使用方式：复制为 config.local.yaml，按需修改
+#   cp config.example.yaml config.local.yaml
+# config.local.yaml 已加入 .gitignore，不会提交
+# ════════════════════════════════════════════════════════════
+
+# ── 回测参数 ────────────────────────────────────────────────
+backtest:
+  initial_capital: 1_000_000   # 初始资金（元）
+  commission_rate: 0.0003      # 手续费率（万3）
+  stamp_tax: 0.001             # 印花税（卖出千1）
+  slippage: 0.002              # 滑点（0.2%）
+
+# ── 策略参数 ────────────────────────────────────────────────
+strategy:
+  hold_num: 20                 # 持仓股票数
+  max_single_weight: 0.05      # 单股最大仓位
+  stop_loss: -0.08             # 单股止损线
+  max_drawdown_halt: -0.15     # 最大回撤熔断
+
+# ── 因子权重 ────────────────────────────────────────────────
+factor_weights:
+  value: 0.30
+  growth: 0.30
+  momentum: 0.20
+  quality: 0.20
+
+# ── 机器学习 ────────────────────────────────────────────────
+ml:
+  predict_days: 20
+  train_years: 2
+  n_estimators: 100
+  feature_importance_top: 15
+
+# ── 仪表盘刷新间隔（分钟）──────────────────────────────────
+dashboard:
+  refresh_interval: 5
+  pick_interval: 30
+
+# ── 错杀扫描触发阈值 ────────────────────────────────────────
+mistaken_kill:
+  trigger_threshold: -2.0      # 大盘跌幅触发阈值（%）
+  max_stocks: 15               # 最多返回股票数
+
+# ── 观察池 ──────────────────────────────────────────────────
+watchlist:
+  track_days: 20               # 默认跟踪天数
+  daily_limit: 5               # 每日自动加入上限
+  max_watch: 20                # 观察池总数上限

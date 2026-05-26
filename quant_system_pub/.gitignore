@@ -1,0 +1,30 @@
+# ── 用户私有配置（含密钥/IP/个人参数）──────────────────────
+.env
+config.local.yaml
+
+# ── 个人金融数据（持仓/观察池/选股记录）────────────────────
+data/my_portfolio.json
+data/watchlist.json
+data/pick_tracker.json
+
+# ── 缓存与临时文件 ──────────────────────────────────────────
+data/api_cache/
+cache/
+reports/*.txt
+reports/*.log
+*.pkl
+*.pyc
+__pycache__/
+
+# ── tdx 本地数据库（体积大，属个人数据）───────────────────
+*.db
+*.duckdb
+
+# ── 系统文件 ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.egg-info/
+dist/
+build/
